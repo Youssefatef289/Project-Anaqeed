@@ -50,21 +50,27 @@
         });
     });
 
-    // Header scroll effect
+    // Header scroll effect - تثبيت الناف بار مع التمرير
     let lastScroll = 0;
     const header = document.querySelector('.header');
     
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4)';
-        } else {
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
-        }
-        
-        lastScroll = currentScroll;
-    });
+    if (header) {
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+                header.style.padding = '0.8rem 0';
+            } else {
+                header.classList.remove('scrolled');
+                header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
+                header.style.padding = '1.2rem 0';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    }
 
     // Button click handlers
     const loginBtn = document.querySelector('.btn-outline');
