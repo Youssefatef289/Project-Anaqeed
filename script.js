@@ -273,21 +273,21 @@
         scrollObserver.observe(clientsPagination);
     }
 
-    // Animate footer columns
-    const footerColumns = document.querySelectorAll('.footer-column');
-    footerColumns.forEach((column, index) => {
-        column.classList.add('fade-in-up');
-        column.style.transitionDelay = `${index * 0.15}s`;
-        scrollObserver.observe(column);
-    });
+    // إلغاء الأنيميشن على footer columns
+    // const footerColumns = document.querySelectorAll('.footer-column');
+    // footerColumns.forEach((column, index) => {
+    //     column.classList.add('fade-in-up');
+    //     column.style.transitionDelay = `${index * 0.15}s`;
+    //     scrollObserver.observe(column);
+    // });
 
-    // Animate footer copyright
-    const footerCopyright = document.querySelector('.footer-copyright');
-    if (footerCopyright) {
-        footerCopyright.classList.add('fade-in-up');
-        footerCopyright.style.transitionDelay = '0.5s';
-        scrollObserver.observe(footerCopyright);
-    }
+    // إلغاء الأنيميشن على footer copyright
+    // const footerCopyright = document.querySelector('.footer-copyright');
+    // if (footerCopyright) {
+    //     footerCopyright.classList.add('fade-in-up');
+    //     footerCopyright.style.transitionDelay = '0.5s';
+    //     scrollObserver.observe(footerCopyright);
+    // }
 
     // Clients pagination
     const paginationDots = document.querySelectorAll('.pagination-dot');
