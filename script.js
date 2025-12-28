@@ -36,7 +36,8 @@
     allNavLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            if (href.startsWith('#')) {
+            // Only prevent default for anchor links on the same page
+            if (href && href.startsWith('#') && !href.includes('.html')) {
                 e.preventDefault();
                 const targetId = href.substring(1);
                 const targetElement = document.getElementById(targetId);
@@ -47,6 +48,7 @@
                     });
                 }
             }
+            // For external page links, let them navigate naturally (active class stays in HTML)
         });
     });
 
@@ -299,11 +301,12 @@
         });
     });
 
-    // Smooth scroll for all anchor links
+    // Smooth scroll for all anchor links (only for section links, not external pages)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href !== '#' && href !== '') {
+            // Only handle pure anchor links (not links with .html in them like index.html#home)
+            if (href && href !== '#' && href !== '' && !href.includes('.html')) {
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
@@ -312,36 +315,66 @@
                         block: 'start'
                     });
                     
-                    // Update active nav link
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
+                    // Update active nav link only for section links (not external page links)
+                    const navLinks = document.querySelectorAll('.nav-link');
+                    navLinks.forEach(link => {
+                        const linkHref = link.getAttribute('href');
+                        // Only update links that point to sections (pure # links, not .html# links)
+                        if (linkHref && linkHref.startsWith('#') && !linkHref.includes('.html')) {
+                            link.classList.remove('active');
+                        }
+                        // Don't touch links to external pages - they keep their active class from HTML
                     });
-                    this.classList.add('active');
+                    if (this.classList.contains('nav-link')) {
+                        this.classList.add('active');
+                    }
                 }
             }
         });
     });
 
-    // Update active nav link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
+    // Set active nav link based on current page (only on index.html)
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const isIndexPage = currentPage === 'index.html' || currentPage === '' || currentPage === '/';
     
-    window.addEventListener('scroll', function() {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.pageYOffset >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
+    if (isIndexPage) {
+        // Update active nav link on scroll (only for index.html)
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
 
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                // Only update links that point to sections on the same page (pure # links, not .html# links)
+                if (href && href.startsWith('#') && !href.includes('.html')) {
+                    link.classList.remove('active');
+                    if (href === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                }
+                // Don't touch links to external pages - they keep their active class from HTML
+            });
+        });
+    } else {
+        // For other pages, keep the active class that's set in HTML
+        // Don't change it based on scroll
+        const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
+            const href = link.getAttribute('href');
+            // Only preserve active class for links that don't point to sections
+            if (href && !href.startsWith('#') && !href.includes('#')) {
+                // Active class is already set in HTML, don't change it
             }
         });
-    });
+    }
 
 });

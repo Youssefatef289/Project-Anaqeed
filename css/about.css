@@ -153,6 +153,8 @@
     width: 100%;
     height: 100%;
     min-height: 500px;
+    margin-top: -236px;
+
 }
 
 /* Vision & Mission Section */
@@ -328,14 +330,15 @@
     justify-content: flex-start;
 }
 .about-side-pattern{
-    width: 105px;
-    height: 493px;
+    width: 95px;
+    height: 455px;
     background-color: #393D46;
     background-image: url('/images/Group\ 418\ \(1\).png');
     background-repeat: repeat-y;
     background-size: 100px auto;
     background-position: center 0;
     background-blend-mode: overlay;
+    /* margin-left: -50px; */
 }
 
 .about-side-pattern-reversed {
@@ -456,6 +459,74 @@
 }
 
 /* Responsive Design */
+/* Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .about-section {
+        padding: 4.5rem 0;
+    }
+    
+    .about-container {
+        padding: 0 2rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .about-image-wrapper {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .about-text-wrapper {
+        width: 100%;
+        max-width: 100%;
+        margin-top: -50px;
+    }
+    
+    .about-title {
+        font-size: 2rem;
+    }
+    
+    .about-description {
+        font-size: 1rem;
+    }
+    
+    .page-header {
+        height: 45vh;
+        padding: 3.5rem 0 2.5rem;
+    }
+    
+    .page-header-container {
+        padding: 0 2rem;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .breadcrumb {
+        margin-top: 80px;
+    }
+    
+    .breadcrumb a,
+    .breadcrumb-separator {
+        font-size: 2rem;
+    }
+    
+    .vision-mission-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .about-page-content {
         grid-template-columns: 1fr;
@@ -612,6 +683,12 @@
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
+    background-image: url('../images/background-valuw.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.65;
+    z-index: 0;
 }
 
 .values-section-new::before {
@@ -805,6 +882,747 @@
 /* Responsive Design for All Sections */
 
 /* Desktop 1440px */
+/* iPad Pro 1024px - الصورة في المنتصف والنص أسفلها */
+@media (min-width: 1024px) and (max-width: 1024px) {
+    .about-section {
+        padding: 4rem 0;
+    }
+    
+    .about-container {
+        padding: 0 1.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        justify-items: center;
+    }
+    
+    .about-image-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+        order: 1;
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* إخفاء البترن في iPad Pro */
+    .about-side-pattern {
+        display: none;
+    }
+    
+    .about-side-pattern-reversed {
+        display: none;
+    }
+    
+    .about-text-wrapper {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .about-image {
+        min-height: 400px;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .about-main-img {
+        width: 100%;
+        width: 1000px;
+        margin: 0 auto;
+        display: block;
+        margin-left: 250px;
+        margin-top: 40px;
+    }
+    
+    .about-title {
+        font-size: 2.2rem;
+        /* text-align: center; */
+    }
+    
+    .about-description {
+        font-size: 20px;
+        text-align: justify;
+        /* text-align-last: center; */
+        line-height: 1.8;
+    }
+    .btn-about-outline {
+        font-size: 16px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-left: 400px;
+        /* padding: 2.5rem; */
+    }
+/*     
+    .about-title-section {
+        justify-content: center;
+    }
+     */
+    .page-header {
+        height: 35vh;
+        padding: 2.5rem 0 1.5rem;
+        position: relative;
+        overflow: visible;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .breadcrumb {
+        margin-top: 50px;
+    }
+    
+    .breadcrumb a,
+    .breadcrumb-separator {
+        font-size: 32px;
+    }
+    
+    /* إظهار الانحناء على iPad Pro 1024px */
+    .hero-curve {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 140px;
+        z-index: 5;
+        overflow: hidden;
+        display: block !important;
+        pointer-events: none;
+    }
+    
+    .hero-curve svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    
+    /* إظهار الصور الجانبية والسفلية في الهيرو على iPad Pro 1024px */
+    .hero-left-image {
+        position: absolute;
+        top: 0;
+        left: 50px;
+        bottom: 0;
+        width: 250px;
+        background-image: url('../images/Frame-hero\ \(2\).svg');
+        background-repeat: repeat-y;
+        background-size: 180px auto;
+        background-position: left center;
+        opacity: 0.5;
+        z-index: 2;
+        display: block !important;
+    }
+    
+    .hero-bottom-image {
+        position: absolute;
+        bottom: 100px;
+        left: 200px;
+        right: 0;
+        height: 180px;
+        background-image: url('../images/Frame-hero\ \(1\).svg');
+        background-repeat: repeat-x;
+        background-size: auto 180px;
+        background-position: center bottom;
+        opacity: 0.5;
+        z-index: 2;
+        display: block !important;
+    }
+    
+    /* Reversed Section */
+    .about-content-reversed {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .about-image-wrapper-reversed {
+        margin-right: 0;
+        order: 1;
+        width: 100%;
+    }
+    
+    .about-text-wrapper-reversed {
+        order: 2;
+        width: 100%;
+    }
+    
+    .about-image-reversed {
+        margin-top: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .about-main-img-reversed {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Values Section - مثل Desktop */
+    .values-section-new {
+        padding: 5rem 0;
+    }
+    
+    .values-container-new {
+        max-width: 1000px;
+        padding: 0 2rem;
+    }
+    
+    .values-circles-wrapper {
+        width: 900px;
+        height: 450px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    .values-connecting-line-img {
+        width: 90%;
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        top: 150px;
+        left: 0;
+        right: 30px;
+        bottom: 0;
+        z-index: 1;
+        /* margin-top: -150px !important; */
+    }
+    
+    .value-circle {
+        position: absolute;
+        width: 200px;
+        height: auto;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        text-align: center;
+        z-index: 2;
+        gap: 0.75rem;
+    }
+    
+    .value-circle-icon {
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .value-circle-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 12px;
+        background: linear-gradient(135deg, #C9B384 0%, #C9B384 100%);
+        border: 3px solid #C9B384;
+        border-radius: 50%;
+    }
+    
+    .value-circle-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #393D46;
+        margin: 0;
+    }
+    
+    .value-circle-description {
+        font-size: 0.8rem;
+        color: #393D46;
+        margin: 0;
+        line-height: 1.4;
+    }
+    
+    .value-circle-1 {
+        top: -40%;
+        left: 30px;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .value-circle-2 {
+        bottom: 50%;
+        left: 5%;
+    }
+    
+    .value-circle-3 {
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .value-circle-4 {
+        bottom: 30%;
+        right: 8%;
+    }
+    
+    .value-circle-5 {
+        top: -20%;
+        right: -15%;
+    }
+}
+
+/* iPad Pro 1366px - الصورة في المنتصف والنص أسفلها */
+@media (min-width: 1366px) and (max-width: 1366px) {
+    .about-section {
+        padding: 4rem 0;
+    }
+    
+    .about-container {
+        padding: 0 1.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        justify-items: center;
+    }
+    
+    .about-image-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+        order: 1;
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* إخفاء البترن في iPad Pro */
+    .about-side-pattern {
+        display: none;
+    }
+    
+    .about-side-pattern-reversed {
+        display: none;
+    }
+    
+    .about-text-wrapper {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .about-image {
+        min-height: 400px;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .about-main-img {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .about-title {
+        font-size: 2.3rem;
+        text-align: center;
+    }
+    
+    .about-description {
+        font-size: 1.2rem;
+        text-align: justify;
+        text-align-last: center;
+        line-height: 1.9;
+    }
+    
+    .about-title-section {
+        justify-content: center;
+    }
+    
+    .page-header {
+        height: 35vh;
+        padding: 2.5rem 0 1.5rem;
+        position: relative;
+        overflow: visible;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .breadcrumb {
+        margin-top: 50px;
+    }
+    
+    .breadcrumb a,
+    .breadcrumb-separator {
+        font-size: 32px;
+    }
+    
+    /* إظهار الانحناء على iPad Pro 1366px */
+    .hero-curve {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -101px;
+        width: 100%;
+        height: 140px;
+        z-index: 5;
+        overflow: hidden;
+        display: block !important;
+        pointer-events: none;
+    }
+    
+    .hero-curve svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    
+    /* إظهار الصور الجانبية والسفلية في الهيرو على iPad Pro 1366px */
+    .hero-left-image {
+        position: absolute;
+        top: 0;
+        left: 80px;
+        bottom: 0;
+        width: 280px;
+        background-image: url('../images/Frame-hero\ \(2\).svg');
+        background-repeat: repeat-y;
+        background-size: 200px auto;
+        background-position: left center;
+        opacity: 0.5;
+        z-index: 2;
+        display: block !important;
+    }
+    
+    .hero-bottom-image {
+        position: absolute;
+        bottom: 100px;
+        left: 280px;
+        right: 0;
+        height: 200px;
+        background-image: url('../images/Frame-hero\ \(1\).svg');
+        background-repeat: repeat-x;
+        background-size: auto 200px;
+        background-position: center bottom;
+        opacity: 0.5;
+        z-index: 2;
+        display: block !important;
+    }
+    
+    /* Reversed Section */
+    .about-content-reversed {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .about-image-wrapper-reversed {
+        margin-right: 0;
+        order: 1;
+        width: 100%;
+    }
+    
+    .about-text-wrapper-reversed {
+        order: 2;
+        width: 100%;
+    }
+    
+    .about-image-reversed {
+        margin-top: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .about-main-img-reversed {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Values Section - مثل Desktop */
+    .values-section-new {
+        padding: 5.5rem 0;
+    }
+    
+    .values-container-new {
+        max-width: 1200px;
+        padding: 0 3rem;
+    }
+    
+    .values-circles-wrapper {
+        width: 1000px;
+        height: 500px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    .values-connecting-line-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        margin-top: -200px !important;
+    }
+    
+    .value-circle {
+        position: absolute;
+        width: 170px;
+        height: auto;
+        min-height: 170px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        text-align: center;
+        z-index: 2;
+        gap: 0.75rem;
+    }
+    
+    .value-circle-icon {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .value-circle-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 15px;
+        background: linear-gradient(135deg, #C9B384 0%, #C9B384 100%);
+        border: 3px solid #C9B384;
+        border-radius: 50%;
+    }
+    
+    .value-circle-title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #393D46;
+        margin: 0;
+    }
+    
+    .value-circle-description {
+        font-size: 0.85rem;
+        color: #393D46;
+        margin: 0;
+        line-height: 1.4;
+    }
+    
+    .value-circle-1 {
+        top: -25%;
+        left: -15%;
+        width: 180px;
+        height: 180px;
+    }
+    
+    .value-circle-2 {
+        bottom: 45%;
+        left: 2%;
+    }
+    
+    .value-circle-3 {
+        bottom: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .value-circle-4 {
+        bottom: 35%;
+        right: 5%;
+    }
+    
+    .value-circle-5 {
+        top: -25%;
+        right: -18%;
+    }
+}
+
+/* Screen 1400px */
+@media (min-width: 1400px) and (max-width: 1440px) {
+    .about-section {
+        padding: 6rem 0;
+    }
+    
+    .about-container {
+        max-width: 1350px;
+        padding: 0 3.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: auto 1fr;
+        gap: 4.5rem;
+        align-items: flex-start;
+        direction: ltr;
+    }
+
+    .hero-curve {
+        bottom:-40px;
+    }
+    
+    .about-image-wrapper {
+        margin-left: -100px;
+        width: 150px;
+        height: auto;
+        align-self: flex-start;
+    }
+    
+    .about-side-pattern{
+        width: 105px;
+        /* height: 427px; */
+        display: block;
+    }
+    
+    .about-image {
+        position: relative;
+        top: 0;
+    }
+    
+    .about-main-img {
+        width: 600px;
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+    
+    .about-text-wrapper {
+        direction: rtl;
+        text-align: right;
+    }
+    
+    .about-title {
+        font-size: 2.4rem;
+        text-align: right;
+    }
+    
+    .about-description {
+        font-size: 1.15rem;
+        text-align: justify;
+        text-align-last: right;
+        width: 100%;
+        max-width: 100%;
+    }
+    .about-description-services{
+        font-size: 16px;
+       
+     
+    }
+    .about-main-img-services{
+        margin-left: 170px;
+        z-index: 1;
+        height: 490px !important;
+        width: 550px !important;
+    }
+    .about-side-pattern-services{
+        position: absolute;
+        margin-left: 15px;
+        z-index: 2;
+        height: 400px !important;
+    }
+    
+    .page-header {
+        height: 50vh;
+    }
+    
+    .page-title {
+        font-size: 2.9rem;
+    }
+}
+
+/* Screen 1440px */
+@media (min-width: 1440px) and (max-width: 1440px) {
+    .about-section {
+        padding: 6rem 0;
+    }
+    
+    .about-container {
+        max-width: 1400px;
+        padding: 0 4rem;
+    }
+    
+    .about-content {
+        grid-template-columns: auto 1fr;
+        gap: 5rem;
+        align-items: flex-start;
+        direction: ltr;
+    }
+    
+    .about-image-wrapper {
+        margin-left: -150px;
+        width: 150px;
+        height: auto;
+        align-self: flex-start;
+    }
+    
+    .about-image {
+        position: relative;
+        top: 0;
+    }
+    
+    .about-main-img {
+        width: 700px;
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+    
+    .about-side-pattern{
+        width: 105px;
+        height: 490px;
+        display: block;
+        margin-left: 0;
+        position: relative;
+    }
+    
+    .about-text-wrapper {
+        direction: rtl;
+        text-align: right;
+    }
+    
+    .about-title {
+        font-size: 2.5rem;
+        text-align: right;
+    }
+    
+    .about-description {
+        font-size: 1.2rem;
+        text-align: justify;
+        text-align-last: right;
+        width: 100% !important;
+        max-width: 100%;
+    }
+    
+    .page-header {
+        height: 50vh;
+    }
+    
+    .page-title {
+        font-size: 3rem;
+    }
+}
+
 @media (min-width: 1440px) {
     .about-container {
         max-width: 1400px;
@@ -866,7 +1684,8 @@
     }
     
     .about-main-img-reversed {
-        width: 550px;
+        width: 650px;
+        margin-left: 200px;
     }
     
     .about-side-pattern-reversed {
@@ -894,6 +1713,8 @@
         width: 100%;
         max-width: 900px;
         height: 450px;
+        margin-top: -237px;
+
     }
     
     .values-connecting-line-img {
@@ -924,29 +1745,29 @@
     }
     
     .value-circle-1 {
-        top: -10%;
-        left: 5%;
+        top: 10%;
+        left: -5%;
     }
     
     .value-circle-2 {
-        bottom: -20%;
+        bottom: -10%;
         left: 12%;
     }
     
     .value-circle-3 {
-        bottom: -50%;
-        left: 50%;
+        bottom: -30%;
+        left: 51%;
         transform: translateX(-50%);
     }
     
     .value-circle-4 {
-        bottom: -25%;
-        right: 15%;
+        bottom: -10%;
+        right: 10%;
     }
     
     .value-circle-5 {
-        top: -10%;
-        right: 5%;
+        top: 8%;
+        right: -8%;
     }
 }
 
@@ -1358,10 +2179,13 @@
 }
 
 .contact-form {
-    background-color: var(--beige-light);
+    width: 900px;
+  
+    margin: 0 auto;
+    /* background-color: var(--beige-light); */
     padding: 3rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); */
 }
 
 .form-row {
@@ -1392,7 +2216,7 @@
     font-size: 1rem;
     font-family: 'CoconNextArabic', sans-serif;
     color: var(--text-dark);
-    background-color: var(--white);
+    background-color: #F5F5F5;
     transition: all 0.3s ease;
     direction: rtl;
 }
@@ -1415,7 +2239,7 @@
 }
 
 .form-submit {
-    text-align: center;
+    text-align: left;
     margin-top: 2rem;
 }
 

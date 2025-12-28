@@ -1,9 +1,13 @@
 /* Blog Page Specific Styles */
 
+    body {
+        background: white;
+    }
+
 
 /* Blog Section Enhancements */
 .blog-section {
-    background-color: var(--white);
+    /* background-color: var(--white); */
     padding: 6rem 0;
 }
 
@@ -54,26 +58,25 @@
 }
 
 .blog-card {
-    background-color: var(--white);
-    border-radius: 15px;
+    /* background-color: var(--white); */
+    border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .blog-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .blog-image {
     width: 100%;
-    height: 250px;
+    height: 300px;
     object-fit: cover;
 }
 
 .blog-card-content {
     padding: 1.5rem;
+    background: none !important;
 }
 
 .blog-card-title {
@@ -203,6 +206,134 @@
 }
 
 /* Responsive Design */
+/* iPad 1024px */
+@media (min-width: 1024px) and (max-width: 1024px) {
+    .page-header {
+        height: 45vh;
+        padding: 3.5rem 0 2.5rem;
+    }
+    
+    .page-header-container {
+        max-width: 1000px;
+        padding: 0 2.5rem;
+    }
+    
+    .blog-container {
+        max-width: 1000px;
+        padding: 0 2.5rem;
+    }
+    
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .breadcrumb a,
+    .breadcrumb-separator {
+        font-size: 2rem;
+    }
+}
+
+/* iPad 1366px */
+@media (min-width: 1366px) and (max-width: 1366px) {
+    .page-header {
+        height: 48vh;
+        padding: 4rem 0 3rem;
+    }
+    
+    .page-header-container {
+        max-width: 1200px;
+        padding: 0 3rem;
+    }
+    
+    .blog-container {
+        max-width: 1200px;
+        padding: 0 3rem;
+    }
+    
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.75rem;
+    }
+    
+    .page-title {
+        font-size: 2.75rem;
+    }
+    
+    .breadcrumb a,
+    .breadcrumb-separator {
+        font-size: 2.5rem;
+    }
+}
+
+/* Screen 1400px */
+@media (min-width: 1400px) and (max-width: 1439px) {
+    .page-header {
+        height: 50vh;
+        padding: 4rem 0 3rem;
+    }
+    
+    .page-header-container {
+        max-width: 1350px;
+        padding: 0 3.5rem;
+    }
+    
+    .blog-container {
+        max-width: 1350px;
+        padding: 0 3.5rem;
+    }
+    
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+    
+    .page-title {
+        font-size: 2.9rem;
+    }
+    
+    .breadcrumb a,
+    .breadcrumb-separator {
+        font-size: 2.75rem;
+    }
+}
+
+/* Screen 1440px */
+@media (min-width: 1440px) and (max-width: 1440px) {
+    .page-header {
+        height: 50vh;
+        padding: 4rem 0 3rem;
+    }
+    
+    .page-header-container {
+        max-width: 1400px;
+        padding: 0 4rem;
+    }
+    
+    .blog-container {
+        max-width: 1400px;
+        padding: 0 4rem;
+    }
+    
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3.5rem;
+    }
+    
+    .page-title {
+        font-size: 3rem;
+    }
+    
+    .breadcrumb a,
+    .breadcrumb-separator {
+        font-size: 3rem;
+    }
+}
+
 @media (max-width: 1440px) {
     .page-header-container {
         max-width: 1400px;
@@ -236,6 +367,68 @@
     
     .page-title {
         font-size: 2.5rem;
+    }
+}
+
+/* Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .page-header {
+        height: 40vh;
+        padding: 3rem 0 2.5rem;
+    }
+    
+    .page-header-container {
+        padding: 0 2rem;
+    }
+    
+    .breadcrumb {
+        margin-top: 70px;
+    }
+    
+    .breadcrumb a,
+    .breadcrumb-separator {
+        font-size: 2rem;
+    }
+    
+    .page-title {
+        font-size: 2.25rem;
+    }
+    
+    .blog-section {
+        padding: 4.5rem 0;
+    }
+    
+    .blog-container {
+        padding: 0 2rem;
+    }
+    
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .blog-card {
+        max-width: 100%;
+    }
+    
+    .blog-card-image {
+        height: 220px;
+    }
+    
+    .blog-card-title {
+        font-size: 1.3rem;
+    }
+    
+    .blog-card-excerpt {
+        font-size: 0.95rem;
+    }
+    
+    .blog-title {
+        font-size: 2.1rem;
+    }
+    
+    .blog-subtitle {
+        font-size: 1.15rem;
     }
 }
 
